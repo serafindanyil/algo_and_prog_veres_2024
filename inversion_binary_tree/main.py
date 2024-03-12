@@ -2,7 +2,7 @@
 This is main script
 """
 
-from inversion_binary_tree import BinaryTree, InvertTree
+from inversion_binary_tree import BinaryTree, invert_binary_tree
 
 if __name__ == '__main__':
     root = BinaryTree(1)
@@ -16,15 +16,4 @@ if __name__ == '__main__':
     root.right.left = BinaryTree(6)
     root.right.right = BinaryTree(7)
 
-    invert_tree = InvertTree.invert_binary_tree(root)
-
-    print(
-        f"""
-                         {root.value}
-                      {root.left.value}     {root.right.value}
-                    {root.left.left.value}   {root.left.right.value} {root.right.left.value}   {root.right.right.value}
-                    """
-    )
-
-
-
+    invert_binary_tree(root)

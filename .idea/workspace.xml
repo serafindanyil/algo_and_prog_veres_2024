@@ -45,7 +45,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests in inversion_binary_tree_test.py">
     <configuration name="Python tests for inversion_binary_tree_test.FindBiggestElementTest.test_empty_array" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,7 +102,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in /Users/danyil/Documents/GitHub/algo_and_prog_veres_2024/tests/gorillaz_jacky_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in inversion_binary_tree_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,17 +112,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/gorillaz_jacky_test.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/inversion_binary_tree_test.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in inversion_binary_tree_test.py" />
         <item itemvalue="Python tests.Python tests for inversion_binary_tree_test.FindBiggestElementTest.test_empty_array" />
         <item itemvalue="Python tests.Python tests for inversion_binary_tree_test.FindBiggestElementTest.test_inversion_tree" />
         <item itemvalue="Python tests.Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_count_piles_greater_from_hours" />
         <item itemvalue="Python tests.Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_empty_array" />
-        <item itemvalue="Python tests.Python tests in /Users/danyil/Documents/GitHub/algo_and_prog_veres_2024/tests/gorillaz_jacky_test.py" />
       </list>
     </recent_temporary>
   </component>
@@ -136,5 +136,16 @@
       <updated>1709578883612</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

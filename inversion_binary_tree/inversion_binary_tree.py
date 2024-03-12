@@ -10,13 +10,12 @@ class BinaryTree:
         self.left = None
         self.right = None
 
-    def invert_binary_tree(self, tree):
+
+class InvertTree(BinaryTree):
+    @staticmethod
+    def invert_binary_tree(tree) -> BinaryTree:
         if tree is None:
             return tree
         else:
-            tree.left, tree.right = self.invert_binary_tree(tree.right), self.invert_binary_tree(tree.left)
+            tree.left, tree.right = InvertTree.invert_binary_tree(tree.right), InvertTree.invert_binary_tree(tree.left)
         return tree
-
-
-
-

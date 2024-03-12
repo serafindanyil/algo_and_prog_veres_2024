@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3596149c-f307-4131-aff9-a6f083e719a2" name="Changes" comment="" />
+    <list default="true" id="3596149c-f307-4131-aff9-a6f083e719a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/inversion_binary_tree/inversion_binary_tree.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inversion_binary_tree/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/inversion_binary_tree_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +36,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lab__work__2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab__work__3&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/danyil/Documents/GitHub/algo_and_prog_veres_2024&quot;
   }
 }</component>
@@ -40,28 +45,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="algo_and_prog_veres_2024" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab_2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab_2/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_count_piles_greater_from_hours" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,10 +90,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_empty_array" />
         <item itemvalue="Python tests.Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_count_piles_greater_from_hours" />
+        <item itemvalue="Python tests.Python tests for tests.gorillaz_jacky_test.FindBiggestElementTest.test_empty_array" />
         <item itemvalue="Python tests.Python tests in gorillaz_jacky_test.py" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>

@@ -40,7 +40,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_delete_element">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,20 +90,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_extract_max" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="algo_and_prog_veres_2024" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;heap_based_priority_queue_test.FindBiggestElementTest.test_extract_max&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_insert_element" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,13 +104,27 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in heap_based_priority_queue_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="algo_and_prog_veres_2024" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/heap_based_priority_queue_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_delete_element" />
-        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest" />
-        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_extract_max" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_insert_element" />
+        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_delete_element" />
+        <item itemvalue="Python tests.Python tests in heap_based_priority_queue_test.py" />
+        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest" />
       </list>
     </recent_temporary>
   </component>
@@ -138,16 +138,5 @@
       <updated>1709578883612</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/heap_based_priority_queue_test.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

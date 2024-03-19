@@ -30,6 +30,6 @@ if __name__ == '__main__':
 
     # pq.delete_element(vasya)
 
-    for node in PriorityQueue.HEAP:
+    for node in pq.heap:
         print(f"Value: {node.value}, Priority: {node.priority}")
 

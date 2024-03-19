@@ -15,40 +15,41 @@
 
 
 class Node:
-    def __init__(self, value, priority=0):
+    def __init__(self, value, priority):
         self.value = value
         self.priority = priority
 
 
 class PriorityQueue:
-    HEAP = [] # Відсортована бінарна хіпа
+    def __init__(self):
+        self.heap = []
 
     def up(self, i):
-        while i != 0 and self.HEAP[i].priority > self.HEAP[(i - 1) // 2].priority:
-            self.HEAP[i], self.HEAP[(i - 1) // 2] = self.HEAP[(i - 1) // 2], self.HEAP[i]
+        while i != 0 and self.heap[i].priority > self.heap[(i - 1) // 2].priority:
+            self.heap[i], self.heap[(i - 1) // 2] = self.heap[(i - 1) // 2], self.heap[i]
             i = (i - 1) // 2
 
     def down(self, i):
-        n = len(self.HEAP)
+        n = len(self.heap)
         while 2 * i + 1 < n:
             max_child = 2 * i + 1
-            if max_child + 1 < n and self.HEAP[max_child].priority < self.HEAP[max_child + 1].priority:
+            if max_child + 1 < n and self.heap[max_child].priority < self.heap[max_child + 1].priority:
                 max_child += 1
-            if self.HEAP[i].priority >= self.HEAP[max_child].priority:
+            if self.heap[i].priority >= self.heap[max_child].priority:
                 break
-            self.HEAP[i], self.HEAP[max_child] = self.HEAP[max_child], self.HEAP[i]
+            self.heap[i], self.heap[max_child] = self.heap[max_child], self.heap[i]
             i = max_child
 
     def insert_element(self, obj):
-        self.HEAP.append(obj)
-        self.up(len(self.HEAP) - 1)
+        self.heap.append(obj)
+        self.up(len(self.heap) - 1)
 
     def delete_element(self, obj):
         obj_index = None
-        n = len(self.HEAP)
+        n = len(self.heap)
         for index in range(0,n):
-            if obj == self.HEAP[index]:
+            if obj == self.heap[index]:
                 obj_index = index
-        self.HEAP[obj_index], self.HEAP[n-1] = self.HEAP[n-1], self.HEAP[obj_index]
-        self.HEAP.pop(n-1)
+        self.heap[obj_index], self.heap[n-1] = self.heap[n-1], self.heap[obj_index]
+        self.heap.pop(n-1)
         self.down(obj_index)

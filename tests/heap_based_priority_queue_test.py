@@ -11,7 +11,7 @@ class FindBiggestElementTest(TestCase):
         pq = PriorityQueue()
         test = Node("test", 100)
         pq.insert_element(test)
-        self.assertEqual(len(pq.HEAP), 1)
+        self.assertEqual(len(pq.heap), 1)
 
     def test_delete_element(self):
         pq = PriorityQueue()
@@ -24,7 +24,7 @@ class FindBiggestElementTest(TestCase):
         test3 = Node("test2", 30)
         pq.insert_element(test3)
         pq.delete_element(should_delete)
-        self.assertEqual(len(pq.HEAP), 3)
+        self.assertEqual(len(pq.heap), 3)
 
 if __name__ == '__main__':
     main()

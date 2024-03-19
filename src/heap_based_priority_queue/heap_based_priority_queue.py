@@ -52,37 +52,3 @@ class PriorityQueue:
         self.HEAP[obj_index], self.HEAP[n-1] = self.HEAP[n-1], self.HEAP[obj_index]
         self.HEAP.pop(n-1)
         self.down(obj_index)
-
-    def show_priority_queue_with_change(self):
-        for node in self.HEAP:
-            print(f"Value: {node.value}, Priority: {node.priority}")
-
-
-pq = PriorityQueue()
-
-danik = Node("Danik", 300)
-pq.insert_element(danik)
-
-andrew = Node("Andrew", 20)
-pq.insert_element(andrew)
-
-kolya = Node("Kolya", 22)
-pq.insert_element(kolya)
-
-sergey = Node("Sergey", 31)
-pq.insert_element(sergey)
-
-igor = Node("Igor", 21)
-pq.insert_element(igor)
-
-nazar = Node("Nazar", 322)
-pq.insert_element(nazar)
-
-vasya = Node("Vasya", 400)
-pq.insert_element(vasya)
-
-pq.delete_element(vasya)
-pq.show_priority_queue_with_change()
-
-
-

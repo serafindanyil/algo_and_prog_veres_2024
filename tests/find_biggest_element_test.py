@@ -3,7 +3,7 @@ Unittest function 'find_biggest_element'
 """
 
 from unittest import TestCase, main
-from lab_1.find_biggest_element import find_biggest_element
+from src.find_biggest_element import find_biggest_element
 
 
 class FindBiggestElementTest(TestCase):

@@ -40,7 +40,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,7 +62,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for heap_based_priority_queue_test.FindBiggestElementTest" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_correct_priority_queue" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="algo_and_prog_veres_2024" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,7 +72,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;heap_based_priority_queue_test.FindBiggestElementTest&quot;" />
+      <option name="_new_target" value="&quot;heap_based_priority_queue_test.FindBiggestElementTest.test_correct_priority_queue&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -120,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_correct_priority_queue" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_insert_element" />
         <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest.test_delete_element" />
         <item itemvalue="Python tests.Python tests in heap_based_priority_queue_test.py" />
-        <item itemvalue="Python tests.Python tests for heap_based_priority_queue_test.FindBiggestElementTest" />
       </list>
     </recent_temporary>
   </component>

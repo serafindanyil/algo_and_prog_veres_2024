@@ -3,7 +3,7 @@ Unittest function 'InvertTree'
 """
 
 from unittest import TestCase, main
-from inversion_binary_tree.inversion_binary_tree import BinaryTree, invert_binary_tree
+from src.inversion_binary_tree import BinaryTree, invert_binary_tree
 
 
 class FindBiggestElementTest(TestCase):

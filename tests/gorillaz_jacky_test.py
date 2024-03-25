@@ -4,7 +4,7 @@ Unittest function 'jacky_min_eating_speed'
 """
 
 from unittest import TestCase, main
-from lab_2.gorillaz_jacky import jacky_min_eating_speed
+from src.gorillaz_jacky import jacky_min_eating_speed
 
 
 class FindBiggestElementTest(TestCase):

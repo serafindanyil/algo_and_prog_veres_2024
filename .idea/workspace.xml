@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3596149c-f307-4131-aff9-a6f083e719a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/inversion_binary_tree/inversion_binary_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/inversion_binary_tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/inversion_binary_tree_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/inversion_binary_tree_test.py" afterDir="false" />
-    </list>
+    <list default="true" id="3596149c-f307-4131-aff9-a6f083e719a2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

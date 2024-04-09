@@ -8,6 +8,8 @@ class FieldFillingTest(TestCase):
         test_input = open(f'../src/field_filling_resources/test_input.txt', 'r')
         test_field_filling = open(f'../src/field_filling_resources/test_field_filling.txt', 'r')
         self.assertTrue(test_input, test_field_filling)
+        test_input.close()
+        test_field_filling.close()
 
     def test_none_input_data(self):
         with self.assertRaises(FileNotFoundError):
@@ -19,6 +21,8 @@ class FieldFillingTest(TestCase):
         test_write_output = open(f'../src/field_filling_resources/test_output.txt', 'r')
         test_correct_output = open(f'../src/field_filling_resources/test_wrrite_output_data_to_file_correct.txt', 'r')
         self.assertTrue(test_write_output, test_correct_output)
+        test_write_output.close()
+        test_correct_output.close()
 
     def test_same_color(self):
         with self.assertRaises(ValueError):

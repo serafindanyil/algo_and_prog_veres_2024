@@ -1,4 +1,5 @@
 from typing import Tuple, List
+from collections import defaultdict
 
 
 class Node:
@@ -40,7 +41,15 @@ class PriorityQueue:
         self.heap[obj_index], self.heap[n - 1] = self.heap[n - 1], self.heap[obj_index]
         self.heap.pop(n - 1)
         self.down(obj_index)
-        return obj_index, obj #added!!!!!
+
+    def pop_element(self):
+        if not self.heap:
+            return None
+        obj = self.heap[0]
+        self.heap[0] = self.heap[-1]
+        self.heap.pop()
+        self.down(0)
+        return obj.value, obj.priority
 
 
 class GameServer:
@@ -53,90 +62,73 @@ class GameServer:
             with open(f'../src/gamsrv_resources/{input_file}', 'r') as file:
                 count_nodes, count_edges = tuple(map(int, file.readline().split(' ')))
                 clients_nodes = tuple(map(int, file.readline().split(' ')))
-                nodes = tuple(tuple(map(int, file.readline().split(' '))) for cycle in range(count_nodes))
+                graph_in_list = list(list(map(int, file.readline().split(' '))) for cycle in range(count_nodes))
         except FileNotFoundError:
             raise FileNotFoundError(f"File '{input_file}' not found")
         except ValueError:
             raise ValueError('Value is not corrected')
         file.close()
-        return count_nodes, count_edges, clients_nodes, nodes
+        return count_edges, clients_nodes, graph_in_list
 
-    # def write_output_data_to_file(output_file, matrix):
-    #     file = open(f'../src/field_filling_resources/{output_file}', 'w')
-    #     for rows in matrix:
-    #         file.write(f'{rows}\n')
-    #     file.close()
+    @staticmethod
+    def write_output_data_to_file(output_file, min_latency_from_server):
+        file = open(f'../src/gamsrv_resources/{output_file}', 'w')
+        file.write(str(min_latency_from_server))
+        file.close()
 
-    def game_server_max_delay_time(self, input_file):
-        count_nodes, count_edges, clients, nodes = self.read_input_data_from_file(input_file)
-        graph = {start_node: (end_node, latency) for (start_node, end_node, latency) in nodes}
+    def game_servers(self, count_edges, clients, graph_in_list):
+        graph = defaultdict(list)
+        reversed_graph = defaultdict(list)
+        combined_paths = {}
+        combined_shortest_path = defaultdict(list)
+        routers = set(range(1, count_edges)) - set(clients)
+        max_latency = []
 
-        # def network_delay_time(graph, client):
-        #     pq = PriorityQueue()
-        #     start_element = Node(client, 0)
-        #     pq.insert_element(start_element)  # Використовуємо ваш метод insert_element для вставки елемента
-        #     shortest_path = {}
-        #     while pq.heap:
-        #         w, v = pq.delete_element(client)  # Використовуємо ваш метод delete_element для вилучення елемента
-        #         if v not in shortest_path:
-        #             shortest_path[v] = w
-        #             for v_i, w_i in graph[v]:
-        #                 add_element = Node(w + w_i, v_i)
-        #                 pq.insert_element(
-        #                     add_element)  # Використовуємо ваш метод insert_element для вставки нового елемента
-        #     if len(shortest_path) == client:
-        #         return max(shortest_path.values())
-        #     else:
-        #         return -1
-        #
-        # shortness = []
-        # for client in clients:
-        #     shortness.append(network_delay_time(graph, client))
+        for (start_node, end_node, latency) in graph_in_list:
+            graph[start_node].append((end_node, latency))
+            reversed_graph[end_node].append((start_node, latency))
 
-        # def dijkstra(graph, source):
-        #     # Initialize the distance and predecessor dictionaries
-        #     distance = {node: float('inf') for node in graph}
-        #     distance[source] = 0
-        #     predecessor = {node: None for node in graph}
-        #     # Create a priority queue of nodes, ordered by their distance
-        #     pq = PriorityQueue()
-        #     pq.insert_element(Node(source, 0))
-        #     # Repeat until the queue is empty
-        #     while pq.heap:
-        #         # Extract the node with the smallest distance
-        #         dist, node = pq.delete_element(source)
-        #         # For each neighbor of the node
-        #         for neighbor, weight in graph[node]:
-        #             # Calculate the new distance
-        #             new_dist = dist + weight
-        #             # If the new distance is smaller than the old distance
-        #             if new_dist < distance[neighbor]:
-        #                 # Update the distance and predecessor
-        #                 distance[neighbor] = new_dist
-        #                 predecessor[neighbor] = node
-        #                 # Insert or update the neighbor in the queue
-        #                 heapq.heappush(queue, (new_dist, neighbor))
-        #     # Return the distance and predecessor dictionaries
-        #     return distance, predecessor
+        def dijkstra(start_pos, input_graph):
+            pq = PriorityQueue()
+            priority_queue_start_node = Node(start_pos, 0)
+            pq.insert_element(priority_queue_start_node)
+            shortest_path = {}
 
-            # def networkDelayTime(self, times: List[List[int]], N: int, K: int) -> int:
-        #     graph = collections.defaultdict(list)
-        #     for (u, v, w) in times:
-        #         graph[u].append((v, w))
-        #
-        #     priority_queue = [(0, K)]
-        #     shortest_path = {}
-        #     while priority_queue:
-        #         w, v = heapq.heappop(priority_queue)
-        #         if v not in shortest_path:
-        #             shortest_path[v] = w
-        #             for v_i, w_i in graph[v]:
-        #                 heapq.heappush(priority_queue, (w + w_i, v_i))
-        #
-        #     if len(shortest_path) == N:
-        #         return max(shortest_path.values())
-        #     else:
-        #         return -1
+            while pq.heap:
+                end_pos, latency = pq.pop_element()
+                if end_pos not in shortest_path:
+                    shortest_path[end_pos] = latency
+                    for end_pos_i, latency_i in input_graph[end_pos]:
+                        priority_queue_add_node = Node(end_pos_i, latency + latency_i)
+                        pq.insert_element(priority_queue_add_node)
+            return shortest_path
 
-Server1 = GameServer.game_server_max_delay_time(GameServer, input_file='input.txt')
-print(Server1)
+        for client in clients:
+            path = dijkstra(client, graph)
+            reverse_path = dijkstra(client, reversed_graph)
+            for k, end_node in path.items():
+                if k not in clients:
+                    if k in combined_paths:
+                        combined_paths[k] = max(combined_paths[k], end_node)
+                    else:
+                        combined_paths[k] = end_node
+
+            for k, end_node in reverse_path.items():
+                if k not in clients:
+                    if k in combined_paths:
+                        combined_paths[k] = max(combined_paths[k], end_node)
+                    else:
+                        combined_paths[k] = end_node
+
+        for k, end_node in combined_paths.items():
+            combined_shortest_path[k].append(end_node)
+
+        for router in routers:
+            max_latency.extend(combined_shortest_path[router])
+
+        return min(max_latency)
+
+
+count_edges, clients_nodes, graph_in_list = GameServer.read_input_data_from_file(input_file='input.txt')
+server_1 = GameServer.game_servers(GameServer, count_edges, clients_nodes, graph_in_list)
+GameServer.write_output_data_to_file(output_file='output.txt', min_latency_from_server=server_1)

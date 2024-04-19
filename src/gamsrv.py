@@ -1,4 +1,3 @@
-from typing import Tuple, List
 from collections import defaultdict
 
 
@@ -127,8 +126,3 @@ class GameServer:
             max_latency.extend(combined_shortest_path[router])
 
         return min(max_latency)
-
-
-count_edges, clients_nodes, graph_in_list = GameServer.read_input_data_from_file(input_file='input.txt')
-server_1 = GameServer.game_servers(GameServer, count_edges, clients_nodes, graph_in_list)
-GameServer.write_output_data_to_file(output_file='output.txt', min_latency_from_server=server_1)

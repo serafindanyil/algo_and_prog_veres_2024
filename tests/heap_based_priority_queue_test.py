@@ -43,6 +43,15 @@ class FindBiggestElementTest(TestCase):
         result = [node.priority for node in pq.heap]
         self.assertEqual(result, [400, 20, 300])
 
+    def test_pop_element(self):
+        pq = PriorityQueue()
+
+        test = Node("test1", 10)
+        pq.insert_element(test)
+
+        pq.pop_element()
+        self.assertEqual(len(pq.heap), 0)
+
 
 if __name__ == '__main__':
     main()

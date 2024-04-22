@@ -47,9 +47,18 @@ class PriorityQueue:
     def delete_element(self, obj):
         obj_index = None
         n = len(self.heap)
-        for index in range(0,n):
+        for index in range(0, n):
             if obj == self.heap[index]:
                 obj_index = index
-        self.heap[obj_index], self.heap[n-1] = self.heap[n-1], self.heap[obj_index]
-        self.heap.pop(n-1)
+        self.heap[obj_index], self.heap[n - 1] = self.heap[n - 1], self.heap[obj_index]
+        self.heap.pop(n - 1)
         self.down(obj_index)
+
+    def pop_element(self):
+        if not self.heap:
+            return None
+        obj = self.heap[0]
+        self.heap[0] = self.heap[-1]
+        self.heap.pop()
+        self.down(0)
+        return obj.value, obj.priority

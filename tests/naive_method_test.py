@@ -19,6 +19,16 @@ class FindBiggestElementTest(TestCase):
             needle_test = "acaacaab"
             naive_method(haystack_test, needle_test)
 
+    def test_needle_is_not_found(self):
+        haystack_test = 'acaacaab'
+        needle_test = 'ooo'
+
+        needle_test_test = None
+        count_compare_test = None
+        needle_index, count_compare = naive_method(haystack_test, needle_test)
+        self.assertEqual(needle_index, needle_test_test)
+        self.assertEqual(count_compare, count_compare_test)
+
     def test_naive_method(self):
         haystack_test = 'acaacaab'
         needle_test = 'aac'

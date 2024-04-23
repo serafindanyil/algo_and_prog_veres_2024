@@ -4,17 +4,17 @@ def naive_method(haystack: str, needle: str):
     elif len(needle) > len(haystack):
         raise ValueError('Needle should be smaller that Haystack')
 
-    text, pattern = len(haystack), len(needle)
+    len_haystack, len_needle = len(haystack), len(needle)
 
     needle_index = None
     count_compare = None
 
-    for index in range(0, (text - pattern) + 1):
+    for index in range(0, (len_haystack - len_needle) + 1):
 
-        for needle_compare_idx in range(0, pattern):
+        for needle_compare_idx in range(0, len_needle):
             if haystack[needle_compare_idx + index] != needle[needle_compare_idx]:
                 break
-            elif needle_compare_idx == (pattern - 1):
+            elif needle_compare_idx == (len_needle - 1):
                 needle_index = index
                 count_compare = index + needle_compare_idx + 1
             else:

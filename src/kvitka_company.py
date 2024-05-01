@@ -140,10 +140,3 @@ def max_flow(graph, start, destination):
         decrease_weight_on_path(graph, path, found_flow)
 
     return total_flow
-
-
-# data = read_input_data_from_file('input_data.csv')
-# result = max_flow(data['graph'], 'VS', 'VD')
-# write_output_data_to_file(result, 'output_data.csv')
-# print(data['graph'].keys())
-# print(data['graph'])

@@ -3,12 +3,12 @@ from collections import defaultdict
 import csv
 
 
-def read_input_data_from_file(input_file: str):  # додати коментарі шо робиться з вхідними даними
+def read_input_data_from_file(path_to_file: str):
     """
     The function parses the data by variables, and if there are no virtual points, the function adds them
 
     Args:
-        input_file: The path to the input data using format csv
+        path_to_file: The path to the input data using format csv
 
     Returns:
         data_type_dictionary: The dictionary has a parse data from arg: input_file.
@@ -17,8 +17,6 @@ def read_input_data_from_file(input_file: str):  # додати коментар
         FileNotFoundError: If the arg: input_file is none.
         ValueError: If the value is not corrected.
     """
-    if input_file is None:
-        raise FileNotFoundError("File not found")
 
     data_type_dictionary: dict[str, list[Any] | defaultdict[Any, dict]] = {
         'farms': [],
@@ -27,7 +25,7 @@ def read_input_data_from_file(input_file: str):  # додати коментар
     }
 
     try:
-        with open(f'../src/kvitka_company_resources/{input_file}', 'r') as file:
+        with open(path_to_file, 'r') as file:
             reader = csv.reader(file)
 
             virtual_start_point = 'VS'
@@ -54,21 +52,21 @@ def read_input_data_from_file(input_file: str):  # додати коментар
                         data_type_dictionary['graph'][start_node][end_node] = int(weight)
 
     except FileNotFoundError:
-        raise FileNotFoundError(f"File '{input_file}' not found")
+        raise FileNotFoundError(f"File not found")
     except ValueError:
         raise ValueError('Value is not corrected')
 
     return data_type_dictionary
 
 
-def write_output_data_to_file(output_data, output_file_name):
+def write_output_data_to_file(output_data, output_file_path):
     """
         The function write the data.
         Args:
             output_data: The data from total flow.
-            output_file_name: The output file name.
+            output_file: The output file name.
         """
-    with open(f'../src/kvitka_company_resources/{output_file_name}', 'w', newline='') as file:
+    with open(output_file_path, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([str(output_data)])
 
@@ -108,7 +106,7 @@ def decrease_weight_on_path(graph, path: List[Tuple[str, str]], found_flow: int)
 
     Args:
         graph (_type_): _description_
-        path (_type_): [(A, B), (B, C), (C, L)]
+        path (_type_): [('A', 'B'), ('B', 'C'), ('C', 'L')]
         found_flow (_type_): _description_
     """
     for edge in path:
